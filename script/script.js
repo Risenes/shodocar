@@ -30,6 +30,10 @@ function upload(selector, options = {}) {
     const files = Array.from(event.target.files)
 
     // resiz.innerHTML = ''
+    const img = document.getElementById('resize__img')
+    if (img) {
+    img.parentNode.removeChild(img)}
+
     files.forEach(file => {
       if (!file.type.match('image')) {
         return
@@ -42,7 +46,7 @@ function upload(selector, options = {}) {
         const src = ev.target.result
         resiz.insertAdjacentHTML('afterbegin',
           `
-            <img src="${src}" alt="${file.name}" class="resize__img"/>
+            <img src="${src}" alt="${file.name}" class="resize__img" id="resize__img"/>
             
         `)
 
