@@ -36,11 +36,12 @@ $fontfamily: "Noto Serif";
 }
 
 .car {
-  height: 800px;
-  width: 800px;
-  padding: 20px;
-  background-image: url(../img/anton-car.jpg);
-  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.anton__car {
+  position: absolute;
 }
 
 .content {
@@ -71,6 +72,8 @@ input[type=file] {
 .for__resize img {
   max-width: 100%;
   height: auto;
+  position: absolute;
+  z-index: -1;
 }
 
 

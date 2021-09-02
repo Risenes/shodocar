@@ -113,11 +113,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .car {
-  height: 800px;
-  width: 800px;
-  padding: 20px;
-  background-image: url(../img/anton-car.jpg);
-  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.anton__car {
+  position: absolute;
 }
 
 .content {
@@ -160,6 +165,8 @@ input[type=file] {
 .for__resize img {
   max-width: 100%;
   height: auto;
+  position: absolute;
+  z-index: -1;
 }
 
 .resizer {
