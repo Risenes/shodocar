@@ -32,7 +32,8 @@ function upload(selector, options = {}) {
     // resiz.innerHTML = ''
     const img = document.getElementById('resize__img')
     if (img) {
-    img.parentNode.removeChild(img)}
+      img.parentNode.removeChild(img)
+    }
 
     files.forEach(file => {
       if (!file.type.match('image')) {
@@ -49,7 +50,18 @@ function upload(selector, options = {}) {
             <img src="${src}" alt="${file.name}" class="resize__img" id="resize__img"/>
             
         `)
+        let rotate = document.getElementById('bi')
+        let currentRotate = 0;
+        let img = document.querySelector('.resize__img')
 
+        rotate.addEventListener("click", function () {
+          currentRotate = currentRotate ? 0 : 90;
+          img.style.transform = "rotate(" + currentRotate + "deg)";
+          img.style.transition = "transform 1s";
+        })
+
+
+        
       }
 
       reader.readAsDataURL(file)
@@ -61,6 +73,7 @@ function upload(selector, options = {}) {
 
 
 }
+
 
 upload('#file', {
   multi: true,
@@ -154,3 +167,6 @@ for (let resizer of resizers) {
     }
   }
 }
+
+
+
