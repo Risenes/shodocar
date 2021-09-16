@@ -39,6 +39,8 @@ $fontfamily: "Noto Serif";
 .car {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 .anton__car {
@@ -64,6 +66,7 @@ input[type=file] {
 
 
 .for__resize {
+
   width: 200px;
   height: 200px;
   position: absolute;
